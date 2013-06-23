@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="FinalWSService" targetNamespace="http://WebService/" xmlns:tns="http://WebService/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+ >
+    <message name="createAuthor"/>
+    <message name="createAuthorResponse"/>
+    <message name="deleteAuthor"/>
+    <message name="deleteAuthorResponse"/>
+    <message name="updateAuthor"/>
+    <message name="updateAuthorResponse"/>
+    <message name="getAuthorById"/>
+    <message name="getAuthorByIdResponse"/>
+    <message name="getAuthorByUsername"/>
+    <message name="getAuthorByUsernameResponse"/>
+    <message name="createSource"/>
+    <message name="createSourceResponse"/>
+    <message name="updateSource"/>
+    <message name="updateSourceResponse"/>
+    <message name="deleteSource"/>
+    <message name="deleteSourceResponse"/>
+    <message name="getSourceByClassName"/>
+    <message name="getSourceByClassNameResponse"/>
+    <message name="compile"/>
+    <message name="compileResponse"/>
+    <message name="getSourceClassNamesByAuthor"/>
+    <message name="getSourceClassNamesByAuthorResponse"/>
+    <message name="logAuthor"/>
+    <message name="logAuthorResponse"/>
+    <message name="getMainRoot"/>
+    <message name="getMainRootResponse"/>
+    <message name="executeFile"/>
+    <message name="executeFileResponse"/>
+    <portType name="FinalWS">
+        <operation name="createAuthor">
+            <input message="tns:createAuthor"/>
+            <output message="tns:createAuthorResponse"/>
+        </operation>
+        <operation name="deleteAuthor">
+            <input message="tns:deleteAuthor"/>
+            <output message="tns:deleteAuthorResponse"/>
+        </operation>
+        <operation name="updateAuthor">
+            <input message="tns:updateAuthor"/>
+            <output message="tns:updateAuthorResponse"/>
+        </operation>
+        <operation name="getAuthorById">
+            <input message="tns:getAuthorById"/>
+            <output message="tns:getAuthorByIdResponse"/>
+        </operation>
+        <operation name="getAuthorByUsername">
+            <input message="tns:getAuthorByUsername"/>
+            <output message="tns:getAuthorByUsernameResponse"/>
+        </operation>
+        <operation name="createSource">
+            <input message="tns:createSource"/>
+            <output message="tns:createSourceResponse"/>
+        </operation>
+        <operation name="updateSource">
+            <input message="tns:updateSource"/>
+            <output message="tns:updateSourceResponse"/>
+        </operation>
+        <operation name="deleteSource">
+            <input message="tns:deleteSource"/>
+            <output message="tns:deleteSourceResponse"/>
+        </operation>
+        <operation name="getSourceByClassName">
+            <input message="tns:getSourceByClassName"/>
+            <output message="tns:getSourceByClassNameResponse"/>
+        </operation>
+        <operation name="compile">
+            <input message="tns:compile"/>
+            <output message="tns:compileResponse"/>
+        </operation>
+        <operation name="getSourceClassNamesByAuthor">
+            <input message="tns:getSourceClassNamesByAuthor"/>
+            <output message="tns:getSourceClassNamesByAuthorResponse"/>
+        </operation>
+        <operation name="logAuthor">
+            <input message="tns:logAuthor"/>
+            <output message="tns:logAuthorResponse"/>
+        </operation>
+        <operation name="getMainRoot">
+            <input message="tns:getMainRoot"/>
+            <output message="tns:getMainRootResponse"/>
+        </operation>
+        <operation name="executeFile">
+            <input message="tns:executeFile"/>
+            <output message="tns:executeFileResponse"/>
+        </operation>
+    </portType>
+    <binding name="FinalWSPortBinding" type="tns:FinalWS">
+        <wsp:PolicyReference URI="#FinalWSPortBindingPolicy"/>
+        <operation name="createAuthor">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="deleteAuthor">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="updateAuthor">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getAuthorById">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getAuthorByUsername">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="createSource">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="updateSource">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="deleteSource">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getSourceByClassName">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="compile">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getSourceClassNamesByAuthor">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="logAuthor">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="getMainRoot">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="executeFile">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="FinalWSService">
+        <port name="FinalWSPort" binding="tns:FinalWSPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="FinalWSPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsoma:OptimizedMimeSerialization/>
+                <tcp:OptimizedTCPTransport port="SET_BY_RUNTIME" enabled="true"/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="FinalWSPortBinding_getSourceByAuthor_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="FinalWSPortBinding_getSourceByAuthor_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="FinalWSPortBinding_execute_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="FinalWSPortBinding_execute_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

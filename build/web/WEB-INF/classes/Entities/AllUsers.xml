@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+    Document   : AllUsers.xml
+    Created on : July 14, 2011, 2:04 PM
+    Author     : Medard
+    Description:
+        Purpose of the document follows.
+--><AllUsers nextId="7">
+    <user id="2">
+        <username>reber</username>
+        <password>seeeee</password>
+        <rootDirectory>C:/FinalProject/AllUsers/reber</rootDirectory>
+    </user>
+    <user id="4">
+        <username>aimable</username>
+        <password>qwerty</password>
+        <rootDirectory>C:/FinalProject/AllUsers/aimable</rootDirectory>
+    </user>
+    
+<user id="6"><username>blabla</username><password>234</password><rootDirectory>C:/FinalProject/AllUsers/blabla</rootDirectory></user></AllUsers>
